@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>rest-endpoint</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
 
     <dependencies>
@@ -19,7 +19,6 @@
             <groupId>javax.ws.rs</groupId>
             <artifactId>javax.ws.rs-api</artifactId>
             <version>2.0.1</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
@@ -53,8 +52,21 @@
             <artifactId>guava</artifactId>
             <version>19.0</version>
         </dependency>
-
-
     </dependencies>
+
+    <build>
+        <finalName>rest</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 
 </project>

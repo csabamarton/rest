@@ -13,6 +13,7 @@ public class EventStatisticsEndpoint {
 
     @GET
     @Path("/test")
+    @Produces("test/plain")
     public String testEndPoint(){
         return "It works";
     }
